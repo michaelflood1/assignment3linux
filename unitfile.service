@@ -1,0 +1,37 @@
+sudo nano /etc/systemd/system/'file'.service
+
+
+[Unit]
+After=network-online.target
+
+[Timer]
+OnCalendar=*_*_* 5:00:00
+Persistent=true
+
+
+[Service]
+Type=simple
+ExecStart="scriptpath"
+User=webgen
+WorkingDirectory=/var/lib/webgen
+
+[Install]
+WantedBy=timers.target
+WantedBy=multi-user.target
+
+# check timers
+sudo systemctl status my-service.timer
+
+#check logs
+sudo jounalctl -u file.service
+
+#confirm file execution
+
+bash script i.e every time the unit runs it echos executed into a file you made
+or
+sudo systemctl show -p ActiveState my-service.service
+or
+add this into your unit file
+ExecStartPre=/bin/echo "Service about to start" >> /var/log/my-service.log
+ExecStart=/path/to/your-script.sh
+ExecStartPost=/bin/echo "Service has finished" >> /var/log/my-service.log

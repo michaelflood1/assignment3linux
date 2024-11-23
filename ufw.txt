@@ -1,0 +1,9 @@
+sudo pacman -S ufw
+sudo systemctl start/enable ufw
+sudo ufw default deny incoming
+sudo ufw default allow outgoing
+
+sudo ufw allow ssh
+sudo ufw allow http
+sudo ufw limit ssh
+sudo systemctl reload ufw

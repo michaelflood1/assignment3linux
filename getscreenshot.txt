@@ -1,0 +1,4 @@
+ssh -X !!! important flag so you can view your website
+curl ifconfig.me
+type repsonse ip into your webbrowser
+take screenshot
