@@ -1,6 +1,6 @@
-sudo groupadd nginx
+sudo groupadd webgen
 
-sudo useradd -r -d /var/lib/webgen --group nginx --shell /usr/bin/nologin webgen
+sudo useradd -r -d /var/lib/webgen --group webgen --shell /usr/bin/nologin webgen
 # creates system user with above directory and add into group for it 
 
 sudo mkdir -p /var/lib/webgen/bin
