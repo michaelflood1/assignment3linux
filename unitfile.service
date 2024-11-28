@@ -1,23 +1,34 @@
 sudo nano /etc/systemd/system/'file'.service
-
-
+###unit file
 [Unit]
+Description=Uses webgen user to start a predefined script
+Wants=network-online.target
 After=network-online.target
-
-[Timer]
-OnCalendar=*_*_* 5:00:00
-Persistent=true
-
 
 [Service]
 Type=simple
-ExecStart="scriptpath"
 User=webgen
-WorkingDirectory=/var/lib/webgen
+Group=webgen
+ExecStartPre=/bin/echo "Service about to start"
+ExecStart=/path/to/your-script.sh
+ExecStartPost=/bin/echo "Service has finished"
+
+[Install]
+WantedBy=multi-user.target
+### timer file
+[Unit]
+Description=Persistent initiating of generate-index.service at 05:00 AM
+
+[Timer]
+OnCalendar=*-*-* 05:00:00
+Persistent=true
 
 [Install]
 WantedBy=timers.target
-WantedBy=multi-user.target
+
+#check syntax
+sudo systemd-analyze verify /etc/systemd/system/generate-index.timer
+sudo systemd-analyze verify /etc/systemd/system/generate-index.service
 
 # check timers
 sudo systemctl status my-service.timer
