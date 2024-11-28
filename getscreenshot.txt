@@ -1,4 +1,3 @@
-ssh -X !!! important flag so you can view your website
-curl ifconfig.me
-type repsonse ip into your webbrowser
-take screenshot
+enter droplet ip in browser
+ctrl shift s
+clicky n draggy
