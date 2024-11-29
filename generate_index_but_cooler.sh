@@ -134,6 +134,7 @@ cat <<EOF > "$OUTPUT_FILE"
             <p><strong>Operating System:</strong> $OS_NAME</p>
             <p><strong>Date:</strong> $DATE</p>
             <p><strong>Number of Installed Packages:</strong> $PACKAGE_COUNT</p>
+            <a href=“https://github.com/michaelflood1/assignment3linux”>
         </div>
     </div>
 

@@ -210,14 +210,10 @@ We will be setting up ufw firewall
 
 |Rule|explained|command|
 |--|--|--|
-|22 Limit In Anywhere| limits mutliple hits from the same ssh source to avoid brute force attacks|sudo ufw limit ssh
-|
-|80 Allow in anywhere|This rule allows unrestricted incoming traffic to port 80 which is our http port|sudo ufw allow 80/tcp
-|
-|22 Allow in "IP ADDR"| allows ssh connections from a specific IP|sudo ufw allow from "ipaddr" to any port 22
-|
-|443 Allow in anywhere|port 443 controls https web traffic |sudo ufw allow 443/tcp
-|
+|22 Limit In Anywhere| limits mutliple hits from the same ssh source to avoid brute force attacks|sudo ufw limit ssh|
+|80 Allow in anywhere|This rule allows unrestricted incoming traffic to port 80 which is our http port|sudo ufw allow 80/tcp|
+|22 Allow in "IP ADDR"| allows ssh connections from a specific IP|sudo ufw allow from "ipaddr" to any port 22|
+|443 Allow in anywhere|port 443 controls https web traffic |sudo ufw allow 443/tcp|
 
 To check and use our firewall we use the following command
 
