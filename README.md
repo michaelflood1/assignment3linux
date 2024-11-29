@@ -1,4 +1,4 @@
-# Assignment 3 and whatnot please gib grade
+# Assignment 3 
 
 ## Task 1 User creation
 
@@ -232,3 +232,7 @@ To check and use our firewall we use the following command
 ![image.png](image.png)
 
 
+## task 6
+
+
+![task6.png](task6.png)

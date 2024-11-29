@@ -15,6 +15,8 @@ ExecStartPost=/bin/echo "Service has finished"
 
 [Install]
 WantedBy=multi-user.target
+
+
 ### timer file
 [Unit]
 Description=Persistent initiating of generate-index.service at 05:00 AM
